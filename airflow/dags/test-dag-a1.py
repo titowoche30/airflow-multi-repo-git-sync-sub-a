@@ -25,4 +25,27 @@ with DAG(
         bash_command="echo 'Hello K8S Airflow World from DAG A1'",
         do_xcom_push=False,
     )
-    
+
+    test_task = BashOperator(
+        task_id="test_task",
+        bash_command="echo 'Hello K8S Airflow World from DAG A1'",
+        do_xcom_push=False,
+    )
+
+    test_task = BashOperator(
+        task_id="test_task",
+        bash_command="echo 'Hello K8S Airflow World from DAG A1'",
+        do_xcom_push=False,
+    )
+
+    test_task = BashOperator(
+        task_id="test_task",
+        bash_command="echo 'Hello K8S Airflow World from DAG A1'",
+        do_xcom_push=False,
+    )
+
+    test_task = BashOperator(
+        task_id="test_task",
+        bash_command="echo 'Hello K8S Airflow World from DAG A1'",
+        do_xcom_push=False,
+    )
