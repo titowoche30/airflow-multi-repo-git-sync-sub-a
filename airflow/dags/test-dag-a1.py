@@ -25,3 +25,4 @@ with DAG(
         bash_command="echo 'Hello K8S Airflow World from DAG A1'",
         do_xcom_push=False,
     )
+    
