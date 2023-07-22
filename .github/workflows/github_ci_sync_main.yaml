@@ -1,0 +1,40 @@
+---
+name: Sync with Main Repo
+
+on:
+  push:
+    branches:
+    - main
+    paths:
+    - airflow/**
+
+env:
+  REPOSITORY_NAME: ${{ github.event.repository.name }}
+
+
+jobs:
+  repository-sync:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout main repo
+      uses: actions/checkout@v3
+      with:
+        repository: titowoche30/airflow-multi-repo-git-sync-main
+        ref: main
+        token: ${{ secrets.PAT_AIRFLOW_REPOS }}
+        submodules: true
+
+    - name: Pull & update submodules recursively
+      run: |
+        git submodule sync $REPOSITORY_NAME
+        git submodule update --init --remote $REPOSITORY_NAME
+        git submodule update --remote $REPOSITORY_NAME
+
+    - name: Commit to pipeline hub
+      run: |
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git add --all
+        git commit -m "Update submodule $REPOSITORY_NAME" || echo "No changes to commit"
+        git push
