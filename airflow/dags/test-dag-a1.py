@@ -20,32 +20,32 @@ with DAG(
     tags=["sync-sub-a"],
 ) as dag:
 
-    test_task = BashOperator(
-        task_id="test_task",
+    test_task_0 = BashOperator(
+        task_id="test_task_0",
         bash_command="echo 'Hello K8S Airflow World from DAG A1'",
         do_xcom_push=False,
     )
 
-    test_task = BashOperator(
-        task_id="test_task",
+    test_task_1 = BashOperator(
+        task_id="test_task_1",
         bash_command="echo 'Hello K8S Airflow World from DAG A1'",
         do_xcom_push=False,
     )
 
-    test_task = BashOperator(
-        task_id="test_task",
+    test_task_2 = BashOperator(
+        task_id="test_task_2",
         bash_command="echo 'Hello K8S Airflow World from DAG A1'",
         do_xcom_push=False,
     )
 
-    test_task = BashOperator(
-        task_id="test_task",
+    test_task_3 = BashOperator(
+        task_id="test_task_3",
         bash_command="echo 'Hello K8S Airflow World from DAG A1'",
         do_xcom_push=False,
     )
 
-    test_task = BashOperator(
-        task_id="test_task",
+    test_task_4 = BashOperator(
+        task_id="test_task_4",
         bash_command="echo 'Hello K8S Airflow World from DAG A1'",
         do_xcom_push=False,
     )
